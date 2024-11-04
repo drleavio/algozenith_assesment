@@ -341,7 +341,7 @@ export default function MainBody(){
                 <div className="rc-right">
                     {
                         videodata.map((val,ind)=>{
-                            return <TaskCard heading={val.heading} header={val.header} time_img={val.time_img} times={val.times} dashboard_img={val.dashboard_img} dash={val.dash} copy_img={val.copy_img} value={val.value} completed={val.completed} data={val.data}/>
+                            return <TaskCard heading={val.heading} header={val.header} time_img={val.time_img} times={val.times} dashboard_img={val.dashboard_img} dash={val.dash} copy_img={val.copy_img} value={val.value} completed={val.completed} data={val.data} key={ind}/>
                             
                         })
                     }

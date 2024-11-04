@@ -4,8 +4,27 @@ import darrow from "../public/images/darrow.svg"
 import { useState } from "react"
 import clsx from "clsx";
 
+interface data{
+    video_img:string;
+    value:string;
+    clock_img:string;
+    times:string;
+}
 
-export default function TaskCard({heading,header,time_img,times,dashboard_img,dash,copy_img,value,completed,data}){
+interface TaskcardProps {
+    heading:string;
+    header:string;
+    time_img:string;
+    times:string;
+    dashboard_img:string;
+    dash:string;
+    copy_img:string;
+    value:string;
+    completed:string;
+    data:data[];
+}
+
+ const TaskCard:React.FC<TaskcardProps>=({heading,header,time_img,times,dashboard_img,dash,copy_img,value,completed,data})=>{
     const [click,setClick]=useState(false);
     return <div className="task-card">
         <div className="inside-task-card">
@@ -44,7 +63,7 @@ export default function TaskCard({heading,header,time_img,times,dashboard_img,da
             "hide-content":!click
         })}>
             {
-                data.map((opt,index)=>{
+                data.map((opt:data,index:number)=>{
                     return <div key={index} className="inside-sc">
                         <div className="play-section">
                             <img className="img" src={opt.video_img} alt="" />
@@ -60,3 +79,5 @@ export default function TaskCard({heading,header,time_img,times,dashboard_img,da
         </div>
     </div>
 }
+
+export default TaskCard;
