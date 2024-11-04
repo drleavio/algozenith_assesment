@@ -16,7 +16,7 @@ import NavBar from "./NavBar";
 export default function Sidebar(){
 
 
-    const [show,setShow]=useState(true);
+    const [show,setShow]=useState(false);
     const data=[
         {
             name:"Dashboard",
